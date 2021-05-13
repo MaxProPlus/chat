@@ -1,0 +1,13 @@
+.message-list {
+  margin-bottom: 72px;
+  margin-top: 32px;
+}
+.chat-header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 600px;
+  height: 32px;
+  background-color: #303030;
+  transform: translateX(-50%);
+}

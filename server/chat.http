@@ -1,0 +1,66 @@
+### Login
+POST http://localhost:3001/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "max",
+  "password": "123"
+}
+
+> {% client.global.set("jwt", response.body.results.access_token); %}
+
+
+### Добавить контакт по username
+POST http://localhost:3001/api/contacts
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "username": "max1"
+}
+
+### Посмотреть все контакты
+GET http://localhost:3001/api/contacts
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+### Удалить контакт
+DELETE http://localhost:3001/api/contacts/604fa7ff8da0cf7e3b76ddc9
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+
+### Отправить сообщение
+POST http://localhost:3001/api/chats/0?to=605f9a5cdd96e8b8ade8998
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+{
+  "body": "123456",
+  "to": "605f9a5cdd96e8b8ade8998e"
+}
+
+### max1 605f9b99f596a5c30857aa35
+### max  605f9a5cdd96e8b8ade8998e
+### chat 605fae9d9d9c4e3be2c81333
+
+### Все сообщения по chatId
+GET http://localhost:3001/api/chats/60649d28bf70b2accbbd9516
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+### Все чаты
+GET http://localhost:3001/api/chats
+Content-Type: application/json
+Authorization: Bearer {{jwt}}
+
+
+### Registry
+POST http://localhost:3001/api/users/signup
+Content-Type: application/json
+
+{
+  "username": "max1",
+  "password": "123",
+  "repeatPassword": "123"
+}

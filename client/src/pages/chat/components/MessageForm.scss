@@ -1,0 +1,29 @@
+.message-form {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  display: flex;
+  width: 600px;
+  padding: 8px 24px;
+  background-color: #303030;
+  transform: translateX(-50%);
+
+  &__btn {
+    margin-left: 8px;
+  }
+
+  &__spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -12px;
+    margin-left: -12px;
+  }
+}
+
+.message-form__error-modal {
+  width: 600px;
+  height: 50px;
+  padding: 8px 24px;
+  margin: auto;
+}
